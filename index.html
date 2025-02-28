@@ -49,6 +49,7 @@
         <p><a href="sase_reference.pdf" download> Download our reference architecture</a></p>
 
         <br>
+
         <form action="feedback.php" method="POST">
             <label for="feedback">Leave a comment?</label><br>
             <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
@@ -56,9 +57,16 @@
         </form>
 
         <br>
-        <p>
-            <a href="about.html">About this website</a>
-        </p>
+
+        <p>Upload a File?</p>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <input type="file" id="file" name="file" value="Choose file"><br><br>
+            <input type="submit" value="Upload">
+        </form>
+
+        <br>
+
+        <p><a href="about.html">About this website</a></p>
     </div>
 </body>
 
