@@ -29,9 +29,10 @@ Remove the index.html file and add the files from this github repository:
 rm index.hmtl
 <copy files from this github into the folder>
 ```
-Ensure the right permissions for the sase_reference.pdf file:
+Ensure the right permissions for the sase_reference.pdf and dlp_test.txt file:
 ```
 sudo chmod 644 /var/www/html/sase_reference.pdf
+sudo chmod 644 /var/www/html/dlp_test.txt
 ```
 For file uploads, create an uploads directory, ensure it is writable by the web server and secure the upload directory so that direct execution of uploaded scripts is not possible:
 ```
