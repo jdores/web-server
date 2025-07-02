@@ -61,6 +61,18 @@ sudo systemctl restart apache2
 php -i | grep upload_max_filesize
 php -i | grep post_max_size
 ```
+For file sandboxing use case, a php module needs to be installed and the permissions adjusted:
+```
+sudo apt install php-zip
+sudo phpenmod zip
+
+sudo chown -R www-data:www-data /var/www/html/
+sudo chmod -R 755 /var/www/html/
+
+sudo systemctl restart apache2
+```
+
+For AV scanning use case, the eicarcom2.zip file from [eicar.org](https://www.eicar.org/download-anti-malware-testfile/) needs to be placed in the /var/www/html/ folder.
 
 ### (Optional) Serve the Apache web server over HTTPS (port 443) using a self-signed certificate
 Ensure Apache has the SSL module instaled:

@@ -1,0 +1,364 @@
+:root {
+    --primary-color: #ff8000; /* Orange */
+    --secondary-color: #333;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --light-text-color: #666;
+    --card-background: white;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Slightly more prominent shadow */
+    --border-radius: 8px;
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background-color: var(--card-background);
+    box-shadow: var(--card-shadow);
+    padding: 1rem 0; /* Add vertical padding */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem; /* Add horizontal padding to nav */
+}
+
+.logo {
+    font-size: 1.6rem; /* Slightly larger */
+    font-weight: 700; /* Bolder */
+    color: var(--primary-color);
+    letter-spacing: -0.5px; /* Tighter letter spacing */
+}
+
+.sign-in {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem; /* Slightly more padding */
+    border-radius: var(--border-radius); /* Use variable for consistency */
+    cursor: pointer;
+    font-weight: 600; /* Bolder font */
+    font-size: 0.95rem;
+    transition: background-color var(--transition-speed), transform 0.15s ease;
+}
+
+.sign-in:hover {
+    background-color: #e67300; /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.sign-in:active {
+    transform: translateY(0);
+}
+
+main {
+    margin-top: 100px; /* Adjust margin to account for fixed header */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem; /* Increased padding */
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 3rem; /* More space below hero */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Larger font size */
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem; /* More space */
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem; /* Slightly larger */
+    color: var(--light-text-color);
+    margin-bottom: 2.5rem; /* More space */
+    max-width: 800px; /* Limit width for readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block; /* Allows padding and margin to work correctly */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem; /* Increased padding */
+    font-size: 1.1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color var(--transition-speed), transform 0.15s ease;
+    -webkit-appearance: none; /* Remove default button styles for consistency */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.cta-button:hover {
+    background-color: #e67300; /* Darker orange on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.cta-button:active {
+    transform: translateY(0);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min width increased */
+    gap: 2.5rem; /* Increased gap */
+    padding: 2rem 0;
+}
+
+.feature-card {
+    background-color: var(--card-background);
+    padding: 2.5rem; /* More padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Distribute space */
+    min-height: 280px; /* Ensure cards have a minimum height for consistency */
+}
+
+.icon {
+    font-size: 3.5rem; /* Larger icons */
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.7rem; /* Slightly larger heading */
+}
+
+.feature-card p {
+    color: var(--light-text-color);
+    margin-bottom: 1.5rem; /* More space before buttons/inputs */
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+/* --- Start of new/modified rules for input sizing and styling --- */
+.feature-card textarea,
+.feature-card input[type="file"] {
+    width: 100%;
+    padding: 0.8rem 1rem; /* Consistent padding */
+    margin-bottom: 15px; /* More space below inputs */
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius); /* Consistent border-radius */
+    font-family: inherit; /* Inherit font from body */
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.feature-card textarea:focus,
+.feature-card input[type="file"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 128, 0, 0.2); /* Focus ring with primary color */
+}
+
+.feature-card input[type="submit"] {
+    width: 100%; /* Make submit buttons take full width within card */
+    padding: 1rem; /* Adjust padding for full width buttons */
+    margin-top: auto; /* Push to bottom if flexbox column */
+    border-radius: var(--border-radius);
+}
+
+.feature-card .cta-button {
+    width: auto; /* Allow button to size naturally */
+    max-width: 100%;
+    margin-top: 10px; /* Space between inputs and buttons */
+}
+/* --- End of new/modified rules --- */
+
+/* New style for grouping buttons horizontally */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* More space between buttons in a group */
+    margin-top: auto; /* Push to bottom of flex container */
+    flex-wrap: wrap;
+}
+
+.button-group .cta-button {
+    width: auto; /* Override full-width for grouped buttons */
+    margin-top: 0; /* Remove extra margin */
+}
+
+footer {
+    text-align: center;
+    padding: 2.5rem; /* More padding */
+    background-color: var(--card-background);
+    margin-top: 3rem; /* More space above footer */
+    box-shadow: var(--card-shadow); /* Add shadow for consistency */
+    color: var(--light-text-color);
+    font-size: 0.95rem;
+}
+
+/* Styles for the About page */
+.message {
+    background-color: var(--card-background);
+    color: var(--text-color);
+    font-size: 1.15rem; /* Slightly larger */
+    padding: 3rem; /* More padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    margin: 3rem auto; /* Center and add more vertical margin */
+    max-width: 700px; /* Slightly wider */
+    text-align: center;
+    line-height: 1.8; /* Better readability */
+}
+
+.message h3 {
+    font-size: 2.2rem; /* Larger heading */
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.message p {
+    margin-bottom: 1.5rem;
+    color: var(--light-text-color);
+}
+
+.message a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed);
+}
+
+.message a:hover {
+    text-decoration: underline;
+    color: #e67300; /* Darker orange on hover */
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .sign-in {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    main {
+        margin-top: 80px;
+        padding: 1.5rem;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .feature-card {
+        padding: 2rem;
+        min-height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+    .icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .message {
+        padding: 2rem;
+        margin: 2rem auto;
+        font-size: 1rem;
+    }
+
+    .message h3 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        gap: 10px;
+    }
+
+    .button-group .cta-button {
+        width: 100%; /* Make stacked buttons full width */
+    }
+
+    .feature-card textarea,
+    .feature-card input[type="file"],
+    .feature-card input[type="submit"] {
+        padding: 0.7rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,78 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>WebApp</title>
-    <style>
-        body {
-            font-family: 'Rubik', sans-serif;
-            text-align: center;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: #f38020; /* Cloudflare Orange */
-            color: #fff; /* White Text */
-        }
-
-        .message {
-            background-color: #fff; /* White Box */
-            color: #333; /* Dark Text */
-            font-size: 20px;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.2); /* Shadow */
-            transition: box-shadow 0.3s ease-in-out;
-        }
-
-        .message:hover {
-            box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.3); /* Enhanced Shadow on Hover */
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webserver</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="message">
-        <img src="https://www.cloudflare.com/img/logo-cloudflare-dark.svg" alt="Cloudflare Logo" width="150">
-        <h3>Welcome to a web server hosted behind cloudflared</h3>
+    <header>
+        <nav>
+            <div class="logo">Web server</div>
+            <button class="sign-in" onclick="location.href='about.html'">About</button>
+        </nav>
+    </header>
 
-        <p>Would you like to know more?</p>
-        <p><a href="sase_reference.pdf" download> Download our reference architecture</a></p>
+    <main>
+        <section class="hero">
+            <h1>This web server is hosted behind cloudflared</h1>
+            <p>Cloudflared is a daemon that allows you to expose a private server or service through the Cloudflare network without opening any inbound ports, using a Cloudflare Tunnel to create a secure, outbound-only connection to Cloudflare's edge.</p>
+        </section>
 
-        <br>
+        <section class="features">
+            <div class="feature-card">
+                <div class="icon">🦠</div>
+                <h2>Anti Virus Scanning</h2>
+                <a href="eicarcom2.zip" download="eicarcom2.zip" class="cta-button">AV test</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📦</div>
+                <h2>File Sandboxing</h2>
+                <a href="generate_zip.php" class="cta-button">Sandbox test</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📄</div>
+                <h2>Data Loss Prevention</h2>
+                <a href="dlp_test.txt" download="DLP_test.txt" class="cta-button">DLP test</a>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📤</div>
+                <h2>Upload a File?</h2>
+                <form action="upload.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="file" name="file" value="Choose file">
+                    <input type="submit" value="Upload" class="cta-button">
+                </form>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💬</div>
+                <h2>Leave a comment?</h2>
+                <form action="feedback.php" method="POST">
+                    <textarea id="feedback" name="feedback" rows="2" cols="50"></textarea>
+                    <input type="submit" value="Submit" class="cta-button">
+                </form>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📚</div>
+                <h2>Want to know more?</h2>
+                <a href="sase_reference.pdf" download="sase_reference.pdf" class="cta-button">Reference architecture</a>
+            </div>
+        </section>
+    </main>
 
-        <form action="feedback.php" method="POST">
-            <label for="feedback">Leave a comment?</label><br>
-            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
-            <input type="submit" value="Submit">
-        </form>
+    <footer>
+        <p>&copy; <span id="year"></span> Webserver powered by Cloudflare One.</p>
+    </footer>
 
-        <br>
-
-        <p>DLP test</p>
-        <p><a href="dlp_test.txt" download> Download DLP test file</a></p>
-
-        <br>
-
-        <p>Upload a File?</p>
-        <form action="upload.php" method="POST" enctype="multipart/form-data">
-            <input type="file" id="file" name="file" value="Choose file"><br><br>
-            <input type="submit" value="Upload">
-        </form>
-
-        <br>
-
-        <p><a href="about.html">About this website</a></p>
-    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
-
 </html>
