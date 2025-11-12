@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebApp</title>
+    <title>Webserver</title>
     <link rel="stylesheet" href="style.css"> </head>
 
 <body>
     <header>
         <nav>
-            <div class="logo">Web server</div>
+            <div class="logo">CFD / GCP / 10.156.15.233</div>
             <button class="sign-in" onclick="location.href='index.html'">Back</button>
         </nav>
     </header>
@@ -70,7 +70,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Webserver powered by Cloudflare One. <a href="/admin">Admin</a></p>
+        <p>&copy; <span id="year"></span> Webserver powered by Cloudflare One. <a href="admin.html">Admin</a></p>
     </footer>
 
     <script>
