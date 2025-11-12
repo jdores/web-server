@@ -70,7 +70,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Webserver powered by Cloudflare One.</p>
+        <p>&copy; <span id="year"></span> Webserver powered by Cloudflare One. <a href="/admin">Admin</a></p>
     </footer>
 
     <script>

@@ -26,7 +26,7 @@ cd /var/www/html
 ```
 Remove the index.html file and add the files from this github repository:
 ```
-rm index.hmtl
+rm index.html
 <copy files from this github into the folder>
 ```
 Ensure the right permissions for the sase_reference.pdf and dlp_test.txt file:
