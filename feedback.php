@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo">CFD / GCP / 10.156.15.233</div>
+            <div class="logo">Simple web server</div>
             <button class="sign-in" onclick="location.href='index.html'">Back to Home</button>
         </nav>
     </header>
